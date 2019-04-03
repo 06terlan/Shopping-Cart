@@ -1,0 +1,41 @@
+<div class="row" style="height: 100%">
+  <div class="col-md-8 col-6" id="products-tab">
+    <div class="products-action">
+      <button class="btn btn-my" (click)="retriveInventory()">Retrive New Inventory</button>
+    </div>
+    <div id="products">
+      <div class="row">
+        
+        <product *ngFor="let product of products; let i = index"
+        [product]="product"
+        [index]="i"
+        draggable [dragData]="product"
+        class="col-md-5 product {{ i%2===0?'':'offset-md-1' }}">
+        </product>
+        
+      </div>
+
+    </div>
+  </div>
+  <div class="col-md-4 col-6" id="cart-tab">
+    <div class="checkout-products" droppable (onDrop)="onItemDrop($event)">
+      
+      <chk-product 
+        *ngFor="let product of addedProducts; let i = index"
+        [product]="product"
+        [index]="i"
+        (onRemoveItem)="removeItem($event)"
+      >
+      </chk-product>
+
+    </div>
+    <div class="checkout-products-action">
+      <div class="actions"><button class="btn btn-my" (click)="checkout()">Checkout</button></div>
+      <div class="total"><span class="cart-total">Cart Total:</span> <span class="total-amount">${{ total }}</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-spinner" *ngIf="loading">
+	<div class="loader"></div>
+</div>

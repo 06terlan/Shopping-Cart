@@ -1,0 +1,173 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  	height: 100%;
+  	padding: 0;
+	margin: 0;
+}
+.row{
+	margin-right: 0px;
+    margin-left: 0px;
+}
+.container{
+	padding: 10px;
+	height: 100%;
+}
+#cart-tab{
+	border: 2px solid #2EBC6B;
+	background-color: #EBF1DE;
+	height: 100%;
+	padding: 10px 5px;
+}
+#products-tab{
+	padding-left: 0px;
+}
+.btn-my{
+	background-color: #00b050;
+	color: white;
+	border: 2px solid #7f7f7f;
+}
+#products{
+	margin-top: 20px;
+}
+/*
+	product style
+*/
+.product{
+	margin-bottom: 30px;
+	color: #000217;
+	padding: 0px;
+	cursor: pointer;
+}
+.product>.product-detail{
+	background-color: #d9d9d9;
+	border: 2px solid #000217;
+	padding: 5px;
+}
+.product>.product-detail>.product-img{
+	padding: 0px;
+}
+.product>.product-detail>.product-img>img{
+	width: 100%;
+}
+.product-detail>.product-info{
+	text-align: center;
+	padding: 0;
+	font-size: 20px;
+}
+.product-detail .product-name{
+	width: 100%;
+	font-weight: bold;
+}
+.product-detail>.product-price{
+	color: #ff0000;
+	font-weight: bold;
+	font-size: 25px;
+    text-align: right;
+}
+/*
+	chechout product style
+*/
+.checkout-products{
+	height: calc(100% - 6em);
+    overflow-y: auto;
+}
+.checkout-product{
+	background-color: #d9d9d9;
+	border: 2px solid #2b2b2b;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+.checkout-product-img{
+	width: 100%;
+}
+.checkout-product-detail > span{
+	padding-left: 5px;
+}
+.checkout-product-name{
+    font-weight: bold;
+    width: 100%;   
+}
+.checkout-product-price{
+	color: #ff0000;
+	font-weight: bold;
+	font-size: 25px;
+    text-align: right;
+}
+.checkout-product-action>.btn-my{
+	margin-bottom: 15px;
+	display: inline-block;
+}
+
+.checkout-products-action{
+	height: 6em;
+	padding: 10px;
+}
+.checkout-products-action .actions{
+	text-align: right;
+}
+.checkout-products-action .cart-total{
+	color: #00b050;
+	font-size: 20px;
+	font-weight: bold;
+}
+.checkout-products-action .total .total-amount{
+	float: right;
+	font-size: 20px;
+	font-weight: bold;
+	color: #ff0000;
+}
+
+/* Loafing component */
+.page-spinner{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #9e9e957a;
+	z-index: 999999;
+	top: 0;
+    left: 0;
+}
+.page-spinner .loader{
+    width: 100px;
+    position: absolute;
+    height: 100px;
+    left: 45%;
+    top: 30%;
+}
+.loader {
+	border: 10px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 10px solid black;
+	width: 80px;
+	height: 80px;
+	-webkit-animation: spin 2s linear infinite; /* Safari */
+	animation: spin 2s linear infinite;
+}
+  
+/* Safari */
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.hidden-mobile{
+	display: none;
+}
+@media (min-width: 990px){
+	.hidden-mobile{
+		display: block;
+	}
+	.checkout-products-action .cart-total{
+		font-size: 25px;
+	}
+	.checkout-products-action .total .total-amount{
+		font-size: 25px;
+	}
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
